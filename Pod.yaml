@@ -12,3 +12,4 @@ spec:
         - sleep
       args:
         - 50s
+  restartPolicy: Never
