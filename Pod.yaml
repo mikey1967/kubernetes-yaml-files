@@ -7,9 +7,9 @@ metadata:
 spec:
   containers:
     - name: mikey-cont1
-      image: alpine
+      image: alpin
       command:
         - sleep
       args:
         - 50s
-  restartPolicy: Never
+  restartPolicy: OnFailure
