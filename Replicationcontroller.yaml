@@ -5,10 +5,8 @@ metadata:
   labels:
     app: nginx
 spec:
-  minReadySeconds: 5
-  replicas: 3
-  selector:
-    app: nginx
+  minReadySeconds: 3
+  replicas: 5
   template:
     metadata:
       name: mikey-pod
@@ -16,7 +14,7 @@ spec:
         app: nginx
     spec:
       containers:
-        - name: mikey-cont1
+        - name: mikey-cont
           image: nginx
           ports:
             - containerPort: 80
