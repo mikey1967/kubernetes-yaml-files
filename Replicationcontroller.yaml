@@ -3,7 +3,7 @@ kind: ReplicationController
 metadata:
   name: mikey-rc
   labels:
-    app: nginx
+    app: jenkins
 spec:
   minReadySeconds: 3
   replicas: 5
@@ -11,7 +11,7 @@ spec:
     metadata:
       name: mikey-pod
       labels:
-        app: nginx
+        app: jenkins
         ver: "1.0"
     spec:
       containers:
