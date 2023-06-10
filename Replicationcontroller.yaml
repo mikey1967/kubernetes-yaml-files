@@ -7,6 +7,8 @@ metadata:
 spec:
   minReadySeconds: 3
   replicas: 5
+  selector:
+    app: jenkins
   template:
     metadata:
       name: mikey-pod
