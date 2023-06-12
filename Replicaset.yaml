@@ -4,7 +4,7 @@ kind: ReplicaSet
 metadata:
   name: mikey-rs
   labels:
-    app: nginx
+    app: jenkins
 spec:
   minReadySeconds: 5
   replicas: 5
