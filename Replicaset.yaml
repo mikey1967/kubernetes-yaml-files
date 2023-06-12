@@ -10,9 +10,9 @@ spec:
   replicas: 5
   selector:
     matchExpressions:
-      key: app
-      operator: In
-      value: nginx
+      - key: app
+        operator: In
+        value: nginx
   template:
     metadata:
       name: mikey-pod
