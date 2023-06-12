@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: mikey-rs
+  labels:
+    app: nginx
+spec:
+  minReadySeconds: 5
+  replicas: 5
+  selector:
+    matchExpressions:
+      key: app
+      operator: In
+      value: nginx
+  template:
+    metadata:
+      name: mikey-pod
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: mikey-cont
+          image: nginx
+          ports:
+            - containerPort: 80
+              protocol: TCP
