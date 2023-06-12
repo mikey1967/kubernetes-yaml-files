@@ -12,7 +12,8 @@ spec:
     matchExpressions:
       - key: app
         operator: In
-        value: nginx
+        values: 
+          - nginx
   template:
     metadata:
       name: mikey-pod
