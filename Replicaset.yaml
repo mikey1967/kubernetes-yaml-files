@@ -4,19 +4,18 @@ kind: ReplicaSet
 metadata:
   name: mikey-rs
   labels:
-    app: jenkins
+    app: nginx
 spec:
   minReadySeconds: 5
   replicas: 5
   selector:
-    matchExpressions:
-      - key: app
-        operator: DoesNotExist
+    matchLabels:
+      app: nginx
   template:
     metadata:
       name: mikey-pod
       labels:
-        app: jenkins
+        app: nginx
     spec:
       containers:
         - name: mikey-cont
@@ -24,3 +23,18 @@ spec:
           ports:
             - containerPort: 80
               protocol: TCP
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mikey-svc
+  labels:
+    app: nginx
+spec:
+  type: LoadBalancer
+  ports:
+    - targetPort: 80
+      port: 35000
+  selector:
+    app: nginx
