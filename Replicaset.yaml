@@ -32,7 +32,7 @@ metadata:
   labels:
     app: nginx
 spec:
-  type: LoadBalancer
+  type: ClusterIp
   ports:
     - targetPort: 80
       port: 35000
