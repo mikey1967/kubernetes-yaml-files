@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: mikey-cont
-          image: jenkins/jenkins
+          image: httpd
           ports:
             - containerPort: 80
               protocol: TCP
