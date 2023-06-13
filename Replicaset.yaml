@@ -35,5 +35,6 @@ spec:
   type: ClusterIP
   ports:
     - port: 35000
+      targetPort: 80
   selector:
     app: nginx
