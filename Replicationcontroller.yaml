@@ -3,22 +3,37 @@ kind: ReplicationController
 metadata:
   name: mikey-rc1
   labels:
-    app: jenkins
+    app: nginx
 spec:
   minReadySeconds: 3
   replicas: 5
   selector:
-    app: jenkins
+    app: nginx
   template:
     metadata:
       name: mikey-pod
       labels:
-        app: jenkins
+        app: nginx
         ver: "1.0"
     spec:
       containers:
         - name: mikey-cont
-          image: nginx
+          image: jenkins/jenkins
           ports:
             - containerPort: 80
               protocol: TCP
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mikey-svc
+  labels:
+    app: nginx
+spec:
+  type: LoadBalancer
+  ports:
+    - targetPort: 80
+      port: 35000
+  selector:
+    app: nginx
