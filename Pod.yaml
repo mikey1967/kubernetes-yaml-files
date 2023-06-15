@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
     - name: mikey
-      image: ubuntu
+      image: alpine
       command:
         - sleep
       args:
