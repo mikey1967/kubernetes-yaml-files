@@ -1,14 +1,15 @@
 apiVersion: v1
 kind: Pod
-metadata: 
-  name: mikey-pod
+metadata:
+  name: mikey-pod1
   labels:
-    app: nginx
+    app: mikey
 spec:
   containers:
-    - name: mike-cont
+    - name: mikey
       image: alpine
       command:
         - sleep
       args:
         - 1d
+     
