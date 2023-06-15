@@ -11,5 +11,4 @@ spec:
       command:
         - sleep
       args:
-        - 50s
-  restartPolicy: OnFailure
+        - 1d
