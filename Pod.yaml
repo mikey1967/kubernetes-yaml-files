@@ -6,7 +6,7 @@ metadata:
     app: nginx
 spec:
   containers:
-    - name: mikey-cont1
+    - name: mike-cont
       image: alpine
       command:
         - sleep
