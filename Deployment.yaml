@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mikey-deployment
+  labels:
+    app: nginx
+spec:
+  minReadySeconds: 5
+  replicas: 20
+  selector:
+    matchLabels:
+      app: nginx
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      name: mikey-deploypod
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: mikey-deploycont
+          image: nginx
+          ports:
+            - containerPort: 80
+              protocol: TCP
