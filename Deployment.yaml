@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: mikey-deploycont
-          image: jenkins/jenkins:2.401.2
+          image: jenkins/jenkins:1.625.1
           ports:
             - containerPort: 8080
               protocol: TCP
