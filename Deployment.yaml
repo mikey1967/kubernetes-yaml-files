@@ -23,7 +23,21 @@ spec:
     spec:
       containers:
         - name: mikey-deploycont
-          image: nginx
+          image: jenkins/jenkins:2.401.2
           ports:
             - containerPort: 80
               protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mikey-svc
+  labels:
+    app: nginx
+spec:
+  selector:
+    app: nginx
+  ports:
+    - targetPort: 80
+      port: 35000
+  type: LoadBalancer
