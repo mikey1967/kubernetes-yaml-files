@@ -8,23 +8,10 @@ metadata:
 spec:
   containers:
     - name: mikey-cont
-      image: nginx
-      ports:
-        - containerPort: 80
-          protocol: TCP
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: mikey-svc
-  labels: 
-    app: nginx
-spec:
-  selector:
-    app: nginx
-  ports:
-    - nodePort: 32001
-      port: 35000
-      targetPort: 80
-  type: NodePort
+      image: alpine
+      args:
+        - sleep
+      command:
+        - 30s
+  restartPolicy: Never
+     
