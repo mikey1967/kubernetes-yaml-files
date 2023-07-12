@@ -22,7 +22,7 @@ metadata:
     app: nginx
 spec:
   ports:
-    - nodePort: 32000
+    - nodePort: 32001
       port: 35000
       targetPort: 80
   type: NodePort
