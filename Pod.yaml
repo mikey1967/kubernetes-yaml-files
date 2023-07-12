@@ -10,8 +10,8 @@ spec:
     - name: mikey-cont
       image: alpine
       args:
-        - sleep
+        - sleepy
       command:
         - 30s
-  restartPolicy: Never
+
      
