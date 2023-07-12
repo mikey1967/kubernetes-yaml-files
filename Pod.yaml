@@ -21,6 +21,8 @@ metadata:
   labels: 
     app: nginx
 spec:
+  selector:
+    app: nginx
   ports:
     - nodePort: 32001
       port: 35000
