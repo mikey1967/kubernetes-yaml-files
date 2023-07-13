@@ -13,5 +13,6 @@ spec:
         - sleep
       command:
         - 15s
+  restartPolicy: Never
       
   
