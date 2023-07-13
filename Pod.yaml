@@ -8,10 +8,9 @@ metadata:
 spec:
   containers:
     - name: mikey-cont
-      image: alpine
-      args:
-        - sleepy
-      command:
-        - 30s
-  restartPolicy: Never
-     
+      image: nginx
+      ports:
+        - containerPort: 80
+          protocol: TCP
+      
+  
