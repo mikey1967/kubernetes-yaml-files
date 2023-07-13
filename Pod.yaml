@@ -12,7 +12,7 @@ spec:
       args:
         - sleep
       command:
-        - 30s
+        - 20s
   restartPolicy: Never
       
   
