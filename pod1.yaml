@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mikey-pod1
+  labels:
+    app: nginx
+spec:
+  containers:
+    - name: mikey-cont1
+      image: alpine
+      args:
+        - sleep
+      command:
+        - 60s
+  restartPolicy: Never
